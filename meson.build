@@ -12,7 +12,7 @@ add_project_arguments(['-Wno-unused-parameter',
                        '-Wno-sign-compare'],
                       language: ['c', 'cpp'])
 
-protobuf_c_dep = subproject('protobuf-c').get_variable('protobuf_c_dep')
+protobuf_c_dep = subproject('protobuf-c')
 
 c = meson.get_compiler('c')
 cc = meson.get_compiler('cpp')
