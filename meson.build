@@ -12,7 +12,7 @@ add_project_arguments(['-Wno-unused-parameter',
                        '-Wno-sign-compare'],
                       language: ['c', 'cpp'])
 
-protobuf_c_dep = dependency('protobuf-c') #subproject('protobuf-c').get_variable('protobuf_c_dep')
+#protobuf_c_dep = dependency('protobuf-c') #subproject('protobuf-c').get_variable('protobuf_c_dep')
 
 c = meson.get_compiler('c')
 cc = meson.get_compiler('cpp')
@@ -26,20 +26,20 @@ if build_webui and build_native_ui
 endif
 
 if meson.is_cross_build()
-  protoc_c = subproject('protobuf-c').get_variable('protoc_c_native')
-  leg = subproject('peg').get_variable('leg_native')
+ # protoc_c = subproject('protobuf-c').get_variable('protoc_c_native')
+ # leg = subproject('peg').get_variable('leg_native')
 else
-  protoc_c = subproject('protobuf-c').get_variable('protoc_c')
-  leg = subproject('peg').get_variable('leg')
+ # protoc_c = subproject('protobuf-c').get_variable('protoc_c')
+ # leg = subproject('peg').get_variable('leg')
 endif
 
 
 subdir('mesa')
 subdir('lib')
 if not build_webui
-  libuv_dep = subproject('libuv').get_variable('libuv_dep')
-  wslay_dep = subproject('wslay').get_variable('wslay_dep')
-  h2o_dep = subproject('h2o').get_variable('h2o_dep')
+ # libuv_dep = subproject('libuv').get_variable('libuv_dep')
+ # wslay_dep = subproject('wslay').get_variable('wslay_dep')
+ # h2o_dep = subproject('h2o').get_variable('h2o_dep')
 
   subdir('server')
   subdir('wrapper')
