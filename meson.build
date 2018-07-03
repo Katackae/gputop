@@ -29,12 +29,12 @@ if meson.is_cross_build()
   protoc_c = find_program('protoc-c', required : true) #Native?
  # protoc_c = subproject('protobuf-c').get_variable('protoc_c_native')
  # leg = subproject('peg').get_variable('leg_native')
-  leg = find-program('leg', required : true) #Native?
+  leg = find_program('leg', required : true) #Native?
 else
   protoc_c = find_program('protoc-c', required : true)
  # protoc_c = subproject('protobuf-c').get_variable('protoc_c')
  # leg = subproject('peg').get_variable('leg')
- leg = find-program('leg', required : true)
+ leg = find_program('leg', required : true)
 endif
 
 
